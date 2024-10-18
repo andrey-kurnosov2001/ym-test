@@ -54,7 +54,14 @@
         defer: true
       });
 
-      ym(98662215, 'hit', '/test-hit');
+      const {port, host, pathname} = window.location;
+      let path = pathname;
+
+      if (['/', '/redirect'].includes((pathname))) {
+        path = '/test-hit';
+      }
+
+      ym(98662215, 'hit', `${port}${host}${path}`);
 
     </script>
     <div><img src="https://mc.yandex.ru/watch/98662215" style="position:absolute; left:-9999px;" alt="" /></div>
