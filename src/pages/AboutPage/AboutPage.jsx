@@ -1,20 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 
 const AboutPage = () => {
 
-    const [data, setData] = useState();
-
-    useEffect(() => {
-        window.ymab('metrika.98662215', 'init', {} , (data) => setData(data));
-        console.log(data);
-    }, []);
-
-
-
     return (
         <div>
-            {data && data}
-            <h2>About Page Varioqub</h2>
+            <h2>About Page Varioqub 2</h2>
         </div>
     );
 };
