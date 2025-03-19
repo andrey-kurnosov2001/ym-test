@@ -1,5 +1,5 @@
 import React from 'react';
-import {createBrowserRouter, Link, RouterProvider} from "react-router-dom";
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import MainPage from "./pages/MainPage/MainPage";
 import AboutPage from "./pages/AboutPage/AboutPage";
 import RedirectPage from "./pages/RedirectPage/RedirectPage";
