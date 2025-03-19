@@ -71,8 +71,13 @@
         e[i]=e[i]||function(){(e[i].a=e[i].a||[]).push(arguments)},
                 me=x.createElement(pe),me.async=1,me.src=r,nt=x.getElementsByTagName(pe)[0],me.addEventListener('error',function(){function cb(t){t=t[t.length-1],'function'==typeof t&&t({flags:{}})};Array.isArray(e[i].a)&&e[i].a.forEach(cb);e[i]=function(){cb(arguments)}}),nt.parentNode.insertBefore(me,nt)})
       (window, document, 'script', 'https://abt.s3.yandex.net/expjs/latest/exp.js', 'ymab');
-      ymab('metrika.98662215', 'init', {} , (data) => {
-        console.log(data);
+      ymab('metrika.98662215', 'getFlags', (flags) => {
+        const flagsMap = {};
+        for (const [key, value] of Object.entries(flags)) {
+          flagsMap[key] = value[0];
+        }
+        console.log('--------> Varioqub flagsMap', flagsMap)
+        console.log('--------> Varioqub flags', flags)
       });
     </script>
 
