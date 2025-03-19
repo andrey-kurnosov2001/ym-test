@@ -14,7 +14,7 @@ const AboutPage = () => {
     return (
         <div>
             {data && data}
-            <h2>About Page</h2>
+            <h2>About Page Varioqub</h2>
         </div>
     );
 };
