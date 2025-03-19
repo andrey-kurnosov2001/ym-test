@@ -2,19 +2,23 @@ import React, {useEffect, useState} from 'react';
 
 const AboutPage = () => {
     const [data, setData] = useState();
-    const dataFlags = sessionStorage.getItem('ymabFlags');
 
     useEffect(() => {
-        setData(dataFlags);
-        console.log('window?.ymabFlags', dataFlags);
-    }, [dataFlags]);
+        window.ymab('metrika.98662215', 'init', {}, (data) => {
+            console.log('--------> Varioqub data', data);
+            setData(data.flags);
+            console.log('--------> Varioqub data', data.flags);
+            sessionStorage.setItem('ymabFlags', JSON.stringify(data?.flags));
+            console.log(sessionStorage.getItem('ymabFlags'));
+        });
+    }, []);
 
     console.log(data);
 
 
     return (
         <div>
-            <h2>About Page Varioqub 7</h2>
+            <h2>About Page Varioqub 8</h2>
         </div>
     );
 };
