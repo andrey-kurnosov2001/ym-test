@@ -4,21 +4,18 @@ const AboutPage = () => {
     const [data, setData] = useState();
 
     useEffect(() => {
-        window.ymab('metrika.98662215', 'init', {}, (data) => {
-            console.log('--------> Varioqub data', data);
-            setData(data.flags);
-            console.log('--------> Varioqub data', data.flags);
-            sessionStorage.setItem('ymabFlags', JSON.stringify(data?.flags));
-            console.log(sessionStorage.getItem('ymabFlags'));
+        window.ymab('metrika.98662215', 'getFlags', {}, (flags) => {
+            console.log('--------> Varioqub data', flags);
+            setData(flags);
+            console.log('--------> data', data);
+            sessionStorage.setItem('ymabFlags', JSON.stringify(flags));
+            console.log('--------> sessionStorage', sessionStorage.getItem('ymabFlags'));
         });
     }, []);
 
-    console.log(data);
-
-
     return (
         <div>
-            <h2>About Page Varioqub 8</h2>
+            <h2>About Page Varioqub 9</h2>
         </div>
     );
 };
