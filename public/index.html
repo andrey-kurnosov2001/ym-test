@@ -79,8 +79,9 @@
       //   console.log('--------> Varioqub flagsMap', flagsMap)
       //   console.log('--------> Varioqub flags', flags)
       // });
-      ymab('metrika.98662215', 'init', (data) => {
-        console.log('--------> Varioqub data', data)
+      ymab('metrika.98662215', 'init', {}, (data) => {
+        console.log('--------> Varioqub data', data);
+        window.ymabFlags = data.flags;
       });
     </script>
 
