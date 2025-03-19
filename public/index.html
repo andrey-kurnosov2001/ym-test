@@ -81,7 +81,7 @@
       // });
       ymab('metrika.98662215', 'init', {}, (data) => {
         console.log('--------> Varioqub data', data);
-        window.ymabFlags = data.flags;
+        sessionStorage.setItem('ymabFlags', JSON.stringify(data?.flags));
       });
     </script>
 
