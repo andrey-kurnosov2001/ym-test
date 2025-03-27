@@ -1,7 +1,19 @@
-import React from 'react';
-import {Link} from "react-router-dom";
+import React, {useEffect, useState} from 'react';
+import {Link, useLocation} from "react-router-dom";
 
 const Layout = ({children}) => {
+    const {pathname} = useLocation();
+    const [experiments, setExperiments] = useState();
+
+    useEffect(() => {
+        window?.ymab('metrika.98662215', 'init', {}, (data) => {
+            setExperiments(data);
+        });
+    }, [pathname]);
+
+    console.log(experiments, pathname);
+
+
     return (
         <div>
             <Link style={{marginRight: "10px"}} to="/">Main Page</Link>
