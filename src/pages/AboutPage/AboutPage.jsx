@@ -1,18 +1,18 @@
 import React from 'react';
-import {MetricaExperimentsProvider, useExperiments} from "yandex-metrica-ab-react";
+import { useExperiments} from "yandex-metrica-ab-react";
 
 const clientId = "metrika.98662215";
 
+
 const AboutPage = () => {
-    const { flags } = useExperiments({ clientId });
-    console.log(flags.test_name);
+    const experiments = useExperiments({ clientId });
+
+    console.log(experiments.flags, 'AboutPage');
 
     return (
-        <MetricaExperimentsProvider clientId={clientId}>
             <div>
                 <h2>About Page Varioqub 12</h2>
             </div>
-        </MetricaExperimentsProvider>
     );
 };
 

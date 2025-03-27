@@ -4,6 +4,10 @@ import MainPage from "./pages/MainPage/MainPage";
 import AboutPage from "./pages/AboutPage/AboutPage";
 import RedirectPage from "./pages/RedirectPage/RedirectPage";
 import Layout from "./pages/Layout/Layout";
+import {MetricaExperimentsProvider} from "yandex-metrica-ab-react";
+
+const clientId = "metrika.98662215";
+
 
 const router = createBrowserRouter([
     {
@@ -23,10 +27,10 @@ const router = createBrowserRouter([
 
 const App = () => {
     return (
-        <div>
-            <h1>Ym test Update Test hit defer true</h1>
+        <MetricaExperimentsProvider clientId={clientId}>
+        <h1>Ym test Update Test hit defer true</h1>
             <RouterProvider router={router} />
-        </div>
+        </MetricaExperimentsProvider>
     );
 };
 
