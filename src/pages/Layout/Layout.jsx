@@ -6,12 +6,14 @@ const Layout = ({children}) => {
     const [experiments, setExperiments] = useState();
 
     useEffect(() => {
+        setExperiments(null);
+
         window?.ymab('metrika.98662215', 'init', {}, (data) => {
             setExperiments(data);
         });
     }, [pathname]);
 
-    console.log(experiments, pathname);
+    console.log(experiments?.flags, pathname);
 
 
     return (
